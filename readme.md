@@ -73,6 +73,12 @@
 ## 零极点和频谱
 
 对于如图所示的零极点图，我们可以通过如下公式计算得到系统函数。
+<p align="center">
+  <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/pole_zero.png" width="240" height="200" alt="图1：中耳和外耳频率响应">
+</p>
+<p align="center">  
+  <b>图1：零极点图</b>
+</p>
 
 谐振极点频率： $\theta_p$ ；半径： $r_p$ ；其中 $\theta_p = (2\pi f_p) / f_s$ ； $f_s = 20\text{ kHz}$ 
 
@@ -132,7 +138,7 @@ $$
   <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/%E5%9B%BE%E7%89%871.png" width="400" height="300" alt="图1：中耳和外耳频率响应">
 </p>
 <p align="center">  
-  <b>图1：中耳和外耳频率响应</b>
+  <b>图2：中耳和外耳频率响应</b>
 </p>
 
 ### A - 中耳滤波器模型：
@@ -150,7 +156,7 @@ $$
   <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/cascade.png" width="400" height="85" >
 </p>
 <p align="center">  
-  <b>图2：中耳和外耳级联</b>
+  <b>图3：中耳和外耳级联</b>
 </p>
 
 - 使用相同的方法，将外耳模型的零点和极点适当地放置在Z平面上，以创建外耳模型的传递函数。
