@@ -71,6 +71,14 @@
 综上所述，中耳在听觉传导中扮演着至关重要的角色，通过将声音波的压力增加和能量转化，确保了我们能够有效地感知和理解外界的声音。这些数值和过程的理解有助于我们更好地理解听觉系统的工作原理和声音传导的重要性。
 
 ## 实验内容
+<p align="center">
+  <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/%E5%9B%BE%E7%89%871.png" width="400" height="300" alt="图1：中耳和外耳频率响应">
+</p>
+<p align="center">  
+  <font color="blue" face="Arial, Helvetica, sans-serif">图1：中耳和外耳频率响应</font>
+</p>
+
+
 
 
 
@@ -91,3 +99,5 @@
 - 将中耳滤波器和外耳模型级联，得到整体的传递函数。
 
 - 使用MATLAB编写脚本来计算级联滤波器的频率响应，并与问题描述中的图表进行比较。
+
+完成后，中耳和外耳的复合频率响应呈现出一个带通滤波器响应（如附近的幅度响应图所示），其峰值主要集中在3 kHz左右。
