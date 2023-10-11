@@ -70,17 +70,70 @@
 
 综上所述，中耳在听觉传导中扮演着至关重要的角色，通过将声音波的压力增加和能量转化，确保了我们能够有效地感知和理解外界的声音。这些数值和过程的理解有助于我们更好地理解听觉系统的工作原理和声音传导的重要性。
 
+## 零极点和频谱
+
+对于如图所示的零极点图，我们可以通过如下公式计算得到系统函数。
+
+谐振极点频率： $\theta_p$ ；半径： $r_p$ ；其中 $\theta_p = (2\pi f_p) / f_s$ ； $f_s = 20\text{ kHz}$ 
+
+谐振零频率： $\theta_z$ ；半径： $r_z$   （ $r_z$  >  $r_p$ 并且更接近单位圆）；其中 $\theta_z = (2\pi f_z) / f_s$ 
+
+中耳系统函数 $H_p(z)$ 可以表示为：
+
+$$
+H_p(z) = \frac{z^2}{\left(z-r_p e^{j \theta_p}\right)\left(z-r_p e^{-j \theta_p}\right)} = \frac{z^2}{z^2 - r_p\left(e^{j \theta_p} + e^{-j \theta_p}\right)z + r_p^2} = \frac{z^2}{z^2 - r_p\left(2\cos \theta_p\right)z + r_p^2} = \frac{1}{1 - 2 r_p\cos \theta_p z^{-1} + r_p^2 z^{-2}}
+$$
+
+进一步，中耳系统函数 $H_p(z)$ 可以重写为：
+
+$$
+H_p(z) = \frac{1}{1 - b_1 z^{-1} + b_2 z^{-2}}
+$$
+
+其中：
+
+$$
+b_1 = 2r_p\cos \theta_p \text{，且} b_2 = r_p^2 \text{。}
+$$
+
+类似地，外耳系统函数 $H_z(z)$ 可以表示为：
+
+$$
+H_z(z) = 1 - a_1 z^{-1} + a_2 z^{-2}
+$$
+
+其中：
+
+$$
+a_1 = 2r_z\cos \theta_z \text{，且} a_2 = r_z^2 \text{。}
+$$
+
+两个传递函数都可以归一化，使得 DC 增益 = 1，如下所示：
+
+$$
+H_p(z) = \frac{1 - b_1 + b_2}{1 - b_1 z^{-1} + b_2 z^{-2}}
+$$
+
+以及
+
+$$H_z(z) = \frac{1 - a_1 z^{-1} + a_2 z^{-2}}{1 - a_1 + a_2}$$
+
+
+$r_p$ 和 $r_z$ 可以计算如下：
+
+$$
+r_p \approx 1 - \left(\frac{BW_p}{f_s}\right)\pi, \quad r_z \approx 1 - \left(\frac{BW_z}{f_s}\right)\pi
+$$
+
+
+
 ## 实验内容
 <p align="center">
   <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/%E5%9B%BE%E7%89%871.png" width="400" height="300" alt="图1：中耳和外耳频率响应">
 </p>
 <p align="center">  
-  <font color="blue" face="Arial, Helvetica, sans-serif">图1：中耳和外耳频率响应</font>
+  <b>图1：中耳和外耳频率响应</b>
 </p>
-
-
-
-
 
 ### A - 中耳滤波器模型：
 
@@ -93,6 +146,12 @@
 - 使用MATLAB绘制频率响应图表，以确认中耳滤波器的效果。
 
 ### B - 外耳模型与中耳级联：
+<p align="center">
+  <img src="https://github.com/joyfuljune/DSP_Auditory_System_Simulation/blob/main/cascade.png" width="400" height="85" >
+</p>
+<p align="center">  
+  <b>图2：中耳和外耳级联</b>
+</p>
 
 - 使用相同的方法，将外耳模型的零点和极点适当地放置在Z平面上，以创建外耳模型的传递函数。
 
@@ -100,4 +159,4 @@
 
 - 使用MATLAB编写脚本来计算级联滤波器的频率响应，并与问题描述中的图表进行比较。
 
-完成后，中耳和外耳的复合频率响应呈现出一个带通滤波器响应（如附近的幅度响应图所示），其峰值主要集中在3 kHz左右。
+完成后，中耳和外耳的复合频率响应呈现出一个带通滤波器响应（如附近的幅度响应图2所示），其峰值主要集中在3 kHz左右。
